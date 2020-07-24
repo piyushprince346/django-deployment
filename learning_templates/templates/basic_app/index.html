@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends "basic_app/basic.html" %}
+    {% block body_block %}
+
+        {% load my_extras %} <!-- don't forget to load that file name containg extra template tags -->
+        <h1>Welcome to the Home Page!</h1>
+        <a href="{% url 'basic_app:relative' %}">Go to Relative URL page</a>
+        <h1>{{ text|upper }}</h1> <!-- upper, lower, title are the filters which can be used -->
+        <h1>{{ text|cut1:'hello' }}</h1> <!-- using our own filter 'cut1' -->
+        <h1>{{ number|add:'50' }}</h1> <!-- using filter add:'' to add something in the number  -->
+    {% endblock body_block %}
